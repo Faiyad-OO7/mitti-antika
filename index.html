@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Antika | A Magical Story</title>
-    <!-- Google Fonts -->
-    <link href="https://googleapis.com" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,7 +11,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: radial-gradient(circle at 50% 50%, #1f122b 0%, #0b0c10 100%);
             color: #ffffff;
             overflow-x: hidden;
@@ -23,21 +21,25 @@
             justify-content: center;
             padding: 20px;
         }
-        .romantic-text {
-            font-family: 'Dancing Script', cursive;
+        .romantic-title {
+            font-size: 2.8rem;
+            color: #ff69b4;
+            text-shadow: 0 0 15px #ff69b4;
+            margin-bottom: 10px;
+            text-align: center;
         }
         .glow-text {
-            text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+            text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
         }
         .btn-style {
-            margin-top: 20px;
-            padding: 15px 35px;
+            margin-top: 25px;
+            padding: 15px 40px;
             background: linear-gradient(to right, #ff69b4, #8a2be2);
             border: none;
             border-radius: 50px;
             color: white;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             letter-spacing: 1px;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
@@ -57,20 +59,18 @@
             gap: 20px;
         }
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 25px;
-            padding: 30px;
+            padding: 35px;
             text-align: left;
             width: 100%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
         .letter-content {
-            color: #d1d5db;
+            color: #e2e8f0;
             line-height: 1.8;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
         }
         .sign-off {
             margin-top: 30px;
@@ -90,12 +90,7 @@
             position: absolute;
             top: -22px;
             left: 6px;
-            animation: flicker 0.1s infinite alternate;
             box-shadow: 0 0 10px #ffea4a;
-        }
-        @keyframes flicker {
-            0% { transform: scale(1) rotate(-2deg); }
-            100% { transform: scale(1.1) rotate(2deg); }
         }
         .cake-container {
             position: relative;
@@ -129,7 +124,7 @@
             font-weight: bold;
             color: white;
             letter-spacing: 3px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             z-index: 5;
         }
         .cake-plate {
@@ -172,6 +167,7 @@
             border-radius: 15px;
             cursor: pointer;
             color: white;
+            font-weight: 600;
             transition: background 0.3s, transform 0.2s;
         }
         .memory-btn:hover {
@@ -187,25 +183,25 @@
             width: 100%;
         }
         #memory-display {
-            background: rgba(255, 105, 180, 0.1);
-            border: 1px solid rgba(255, 105, 180, 0.2);
-            padding: 15px;
+            background: rgba(255, 105, 180, 0.12);
+            border: 1px solid rgba(255, 105, 180, 0.25);
+            padding: 20px;
             border-radius: 15px;
             margin-top: 20px;
-            line-height: 1.6;
-            text-align: center;
+            line-height: 1.7;
+            text-align: left;
+            font-size: 1.05rem;
         }
-        /* Custom Internal Confetti Particles Engine CSS */
-        .confetti-particle {
+        /* Custom Confetti System */
+        .confetti-p {
             position: absolute;
             z-index: 999;
             pointer-events: none;
-            border-radius: 50%;
-            animation: fallAnimation 3s linear forwards;
+            animation: fallA 2.5s linear forwards;
         }
-        @keyframes fallAnimation {
-            0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
+        @keyframes fallA {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
         }
     </style>
 </head>
@@ -213,20 +209,20 @@
 
     <!-- STEP 1: Tap to Continue Screen -->
     <div id="step-1" class="container">
-        <h2 class="romantic-text text-pink-400 glow-text animate-pulse" style="font-size: 2.5rem;">Welcome to a Special Journey... ✨</h2>
+        <h2 class="romantic-title animate-pulse">Welcome to a Special Journey... ✨</h2>
         <button onclick="goToStep2()" class="btn-style">Tap to Continue 🌸</button>
     </div>
 
-    <!-- STEP 2: Antika's Birthday Chapter & Fireworks Animation -->
+    <!-- STEP 2: Antika's Birthday Chapter -->
     <div id="step-2" class="container hidden-step">
-        <h1 class="romantic-text text-pink-500 glow-text" style="font-size: 4.5rem; margin-bottom: 10px;">Antika's Birthday Chapter 👑</h1>
-        <p style="color: #a0aec0; letter-spacing: 4px; text-transform: uppercase; font-size: 0.85rem;">Let the magic unfold...</p>
+        <h1 class="glow-text" style="font-size: 3.8rem; color: #ff69b4; margin-bottom: 10px;">Antika's Birthday Chapter 👑</h1>
+        <p style="color: #a0aec0; letter-spacing: 4px; text-transform: uppercase; font-size: 0.9rem;">Let the magic unfold...</p>
     </div>
 
-    <!-- STEP 3: Virtual Cake & Tap to Extinguish Candles -->
+    <!-- STEP 3: Virtual Cake -->
     <div id="step-3" class="container hidden-step">
-        <h2 class="romantic-text text-pink-400 glow-text" style="font-size: 2.2rem;">🎂 Make a Wish & Blow the Candles!</h2>
-        <p style="color: #a0aec0; font-size: 0.9rem;">মোমবাতির আগুনের ওপর আলতো ট্যাপ (Tap) করে সেগুলো নিভিয়ে দাও...</p>
+        <h2 class="glow-text" style="font-size: 2.2rem; color: #ff69b4;">🎂 Make a Wish & Blow the Candles!</h2>
+        <p style="color: #a0aec0; font-size: 0.95rem;">মোমবাতির আগুনের ওপর আলতো ট্যাপ (Tap) করে সেগুলো নিভিয়ে দাও...</p>
         
         <div class="cake-container">
             <div style="display: flex; gap: 25px; margin-bottom: -10px; z-index: 20;">
@@ -241,19 +237,23 @@
 
     <!-- STEP 4: The Folded Letter Box -->
     <div id="step-4" class="container hidden-step">
-        <h2 class="romantic-text" style="font-size: 2rem; color: #d6bcfa; margin-bottom: 15px;">A private letter has arrived for you... ✉️</h2>
+        <h2 style="font-size: 2rem; color: #d6bcfa; margin-bottom: 15px;">A private letter has arrived for you... ✉️</h2>
         <div onclick="goToStep5()" class="envelope">
             <span style="font-size: 3.5rem; display: block; margin-bottom: 10px;">💌</span>
-            <p style="font-weight: bold; text-transform: uppercase; font-size: 0.9rem; color: #e0115f;">Click to Open the Letter</p>
+            <p style="font-weight: bold; text-transform: uppercase; font-size: 0.95rem; color: #e0115f;">Click to Open the Letter</p>
             <div style="border-top: 1px solid #e2e8f0; margin: 15px 0;"></div>
-            <p style="font-size: 0.75rem; color: #718096; font-style: italic;">Strictly Private & Confidential</p>
+            <p style="font-size: 0.8rem; color: #718096; font-style: italic;">Strictly Private & Confidential</p>
         </div>
     </div>
 
-    <!-- STEP 5: The Final Beautifully Decorated Memory Page -->
+    <!-- STEP 5: The Final Decorated Page -->
     <div id="step-5" class="container hidden-step">
-        <h2 class="romantic-text text-pink-500 glow-text" style="font-size: 4rem; margin-bottom: 10px;">Happy Birthday, Antika! 🎉🎂</h2>
+        <h1 class="glow-text" style="font-size: 3.5rem; color: #ff69b4; margin-bottom: 10px;">Happy Birthday, Antika! 🎉🎂</h1>
         
         <div class="card">
-            <p class="romantic-text text-pink-400" style="font-size: 1.4rem; font-weight: 600; margin-bottom: 15px;">Dear Antika, 🌸</p>
+            <p style="font-size: 1.4rem; font-weight: bold; color: #ff69b4; margin-bottom: 15px;">Dear Antika, 🌸</p>
             <p class="letter-content">
+                আজ ২৪ সেপ্টেম্বর, তোমার সেই বিশেষ দিনটি যার জন্য আমি অধীর আগ্রহে অপেক্ষা করছিলাম। শুভ জন্মদিন! 🎈 
+                <br><br>
+                আমি জানি তুমি সহজে সবার সাথে মিশতে পারো না, নিজেকে গুটিয়ে রাখা এক শান্ত আর <b>introvert</b> একটা মেয়ে 🤫। কিন্তু তোমার ভেতরের সেই মিষ্টি, নিষ্পাপ আর মৃদু দুষ্টুমিটুকু শুধু আমার জানা। তোমার এই কম রাগ আর মিষ্টি স্বভাবটাই তোমাকে সবার চেয়ে আলাদা করে। আমার জীবনে তোমার মতো একজন <b>Best Friend</b> পাওয়া সত্যিই পরম ভাগ্যের। 
+                <br><br>
